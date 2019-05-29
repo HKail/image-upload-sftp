@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示</title>
+    <style>
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>图片地址为：<span th:text="${imageUrl}"></span></h2>
+        <img style="width: 500px" th:src="${imageUrl}">
+    </div>
+</body>
+</html>
