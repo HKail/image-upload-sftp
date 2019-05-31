@@ -3,8 +3,6 @@ package com.miracle.upload.service;
 import com.miracle.upload.util.JSchUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
@@ -22,7 +20,7 @@ public class UploadService {
     private JSchUtil jSchUtil;
 
     // 状态码
-    private static int SUCCESS = 300, FAIL = 400;
+    private static final int SUCCESS = 300, FAIL = 400;
 
     /**
      * 图片上传

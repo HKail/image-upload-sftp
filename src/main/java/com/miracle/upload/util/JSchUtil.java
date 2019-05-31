@@ -63,7 +63,7 @@ public class JSchUtil {
 		// 文件名
         String fileName;
         // 文件类型
-        String fileType = null;
+        String fileType;
 		// 初始文件名
         String originalFilename = multipartFile.getOriginalFilename();
         // 获取文件类型
@@ -90,16 +90,15 @@ public class JSchUtil {
 		System.out.println("上传完毕：" + PATH + fileName);
 		// 设置文件URL地址
 		filePath = FILE_URL + fileName;
-		System.out.println(filePath);
+		System.out.println("图片URL地址：" + filePath);
 		closeChannel();
 		return filePath;
 	}
 	
 	/**
 	 * 关闭Channel
-	 * @throws Exception
 	 */
-	public void closeChannel() throws Exception {
+	public void closeChannel() {
 		if (channel != null) {
 			channel.disconnect();
 		}
@@ -111,7 +110,6 @@ public class JSchUtil {
 	/**
 	 * 获取基于SSL协议的ChannelSftp对象
 	 * @return ChannelSftp SSL协议的ChannelSftp对象
-	 * @throws JSchException
 	 */
 	public ChannelSftp getChannel() throws JSchException {
 		// 创建JSch对象
